@@ -1,33 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Frame</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiruppur Gallery</title>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #f2f7ff;
+    color: #333;
+  }
+
+  header {
+    background: #2e86c1;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-item:hover {
+    transform: scale(1.05);
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .gallery-item:hover .overlay {
+    transform: translateY(0);
+  }
+
+  .overlay h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+
+  .overlay p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    .gallery {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery-item img {
+      height: 200px;
+    }
+
+    header {
+      padding: 30px 20px;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
 </head>
 
-<body class="bg-gray-100 p-10">
+<body>
 
-    <h1 class="text-2xl font-bold mb-4">Image Frame</h1>
+<header>
+  <h1>Tiruppur Gallery</h1>
+  <p>Culture, Food, Nature & Heritage of the Cotton City</p>
+</header>
 
-    <div class="border border-gray-400 bg-white p-4 rounded-xl 
-                w-full max-w-xl 
-                h-72 
-                overflow-y-auto overflow-x-hidden">
+<div class="container">
+  <div class="gallery">
 
-        <div class="grid grid-cols-3 gap-3">
-
-            <img src="image1.jpg" class="w-full h-24 object-cover rounded-lg border">
-            <img src="image2.jpg" class="w-full h-24 object-cover rounded-lg border">
-            <img src="image3.jpg" class="w-full h-24 object-cover rounded-lg border">
-            <img src="image4.jpeg" class="w-full h-24 object-cover rounded-lg border">
-            <img src="image5.jpg" class="w-full h-24 object-cover rounded-lg border">
-            <img src="image6.jpg" class="w-full h-24 object-cover rounded-lg border">
-
-        </div>
-
+    <div class="gallery-item">
+      <img src="item1.jpg" alt="Kangayam Kalaai">
+      <div class="overlay">
+        <h3>Kangayam Kalaai</h3>
+        <p>Traditional majestic bull of Kangayam</p>
+      </div>
     </div>
+
+    <div class="gallery-item">
+      <img src="item2.jpg" alt="Arisum Paruppu Sadham">
+      <div class="overlay">
+        <h3>Arisum Paruppu Sadham</h3>
+        <p>Famous Kongu Nadu traditional food</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="item3.jpg" alt="Tiruppur T-shirt Industry">
+      <div class="overlay">
+        <h3>T-Shirt</h3>
+        <p>Symbol of Tiruppur garment industry</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="item4.jpeg" alt="Farm Land Tiruppur">
+      <div class="overlay">
+        <h3>Farm Land</h3>
+        <p>Peaceful green fields of Tiruppur</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="item5.jpg" alt="Avinashi Lingeshwara Temple">49
+      <div class="overlay">
+        <h3>Avinashi Lingeshwara Temple</h3>
+        <p>Historic spiritual landmark</p>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="item6.jpg" alt="Amaravathi Dam">
+      <div class="overlay">
+        <h3>Amaravathi Dam</h3>
+        <p>Scenic water reservoir & tourist spot</p>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 </body>
 </html>
